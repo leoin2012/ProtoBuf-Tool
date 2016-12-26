@@ -1,0 +1,24 @@
+import "base.proto";
+
+package SnakeProtocol;
+
+/// 返回时间戳协议 0x05000001
+message GetTimeRsp
+{
+    optional uint64 time = 1 [default = 0];            // 服务器时间戳
+    optional uint32 ret = 2 [default = 0];             // 结果
+}
+
+/// 开始游戏 0x05000002
+message StartGameReq
+{
+    optional uint32 style = 1 [default = 0];           // 选择的蛇类型
+    optional string name = 2 [default = ""];           // 玩家昵称
+}
+
+message StartGameRsp
+{
+    optional uint64 time = 1 [default = 0];            // 服务器时间戳
+    optional uint32 ret = 2 [default = 0];             // 返回是否成功
+}
+

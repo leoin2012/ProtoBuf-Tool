@@ -1,0 +1,39 @@
+package BaseProtocol;
+
+/// 返回码
+message RetInfo
+{
+    optional int32 ret_code = 1 [default = 0];            // 返回的错误码
+    optional string ret_msg = 2 [default = ""];           // 返回错误码的简单描述
+}
+
+/// 通用道具信息
+message ItemInfo
+{
+    optional uint32 id = 1 [default = 0];
+    optional uint32 count = 2 [default = 0];
+}
+
+/// 通用简单个人信息
+message UserBaseInfo
+{
+    optional uint32 id = 1 [default = 0];
+    optional uint32 exp = 2 [default = 0];
+    optional uint32 level = 3 [default = 0];
+    optional uint32 sex = 4 [default = 0];
+}
+
+/// 通用简单宠物信息
+message PetBaseInfo
+{
+    optional uint32 id = 1 [default = 0];
+    optional uint32 conf_id = 2 [default = 0];
+    optional uint32 level = 3 [default = 0];
+}
+
+message Coordinate
+{    
+    optional int32 latitude_value  = 1 [default = 0];  // 纬度
+    optional int32 longitude_value = 2 [default = 0];  // 经度
+}
+
